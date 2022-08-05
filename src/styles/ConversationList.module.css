@@ -1,0 +1,26 @@
+.conversationItem {
+  border: 1px solid lightgrey;
+  border-radius: 8px;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.conversationItem:hover {
+  background-color:#E5E5EA;
+}
+
+.conversationItem > a {
+  display: flex;
+  padding: 0.5rem 2rem;
+  width: 100%;
+}
+
+.conversationItem > a > div {
+  flex-wrap: wrap;
+}
+
+.conversationInterlocutor {
+  line-height: 1.2;
+  margin-left: 2rem;
+  width: 10rem;
+}

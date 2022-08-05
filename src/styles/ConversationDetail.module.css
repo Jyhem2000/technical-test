@@ -1,0 +1,80 @@
+.topBar {
+  padding: 2rem;
+  margin: 1rem 2rem 2rem;
+  border-top: 1px solid black;
+  background-color: lightgray;
+  width: 80%;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.topBar .authors {
+  float: left;
+}
+
+.topBar .lastMessageDate {
+  float: right;
+}
+
+.topBar .date {
+  font-style: italic;
+}
+
+@media (max-width: 700px) {
+  .topBar .lastMessageDate {
+    display: none;
+  }
+  
+}
+
+div.messageList {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+p.messageAuthor {
+  margin-bottom: 0.5rem;
+  color: gray;
+}
+
+p.messageAuthor .messageDate {
+  font-size: 0.8em;
+  font-style: italic;
+}
+
+div.messageFromLoggedUser > p.messageAuthor {
+  padding-left: 60px; 
+}
+
+div.messageFromRecipient > p.messageAuthor {
+  padding-left: 20px; 
+}
+
+.messageContent {
+  position: relative;
+  padding: 15px 20px;
+  border-radius: 25px;
+  margin-top: 0;
+}
+
+div.messageFromLoggedUser > p.messageContent {
+  background: #0B93F6;
+  color: white;
+  margin-right: 0;
+  margin-left: 50px;
+}
+
+div.messageFromRecipient > p.messageContent {
+  background: #E5E5EA;
+  color: black;
+  margin-right: 50px;
+  margin-left: 0;
+}
+
+div.reply {
+  width: 100%;
+  margin-top: 2rem;
+}
+

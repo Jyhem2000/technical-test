@@ -6,7 +6,7 @@
       "recipientNickname": "Jeremie",
       "senderId": 1,
       "senderNickname": "Thibaut",
-      "lastMessageTimestamp": 1625637849
+      "lastMessageTimestamp": 1625648670
     },
     {
       "id": 2,
@@ -22,7 +22,7 @@
       "recipientNickname": "Thibaut",
       "senderId": 4,
       "senderNickname": "Elodie",
-      "lastMessageTimestamp": 1625648667
+      "lastMessageTimestamp": 1625699999
     }
   ],
   "messages": [
@@ -31,28 +31,56 @@
       "conversationId": 1,
       "timestamp": 1625637849,
       "authorId": 1,
-      "body": "Bonjour c'est le premier message de la première conversation"
+      "body": "Bonjour Jeremie"
     },
     {
       "id": 2,
       "conversationId": 1,
       "timestamp": 1625637867,
       "authorId": 1,
-      "body": "Bonjour c'est le second message de la première conversation"
+      "body": "Etes vous toujours interessé par l'article ?"
     },
     {
       "id": 3,
       "conversationId": 1,
-      "timestamp": 1625648667,
+      "timestamp": 1625699999,
       "authorId": 2,
-      "body": "Bonjour c'est le troisième message de la première conversation"
+      "body": "Oui bien sur !"
     },
     {
       "id": 4,
       "conversationId": 2,
       "timestamp": 1620284667,
-      "authorId": 2,
+      "authorId": 1,
       "body": "Bonjour c'est le premier message de la seconde conversation"
+    },
+    {
+      "id": 5,
+      "conversationId": 3,
+      "timestamp": 1620284667,
+      "authorId": 3,
+      "body": "Bonjour !"
+    },
+    {
+      "conversationId": 3,
+      "timestamp": 1659718527,
+      "body": "hello",
+      "authorId": 1,
+      "id": 6
+    },
+    {
+      "conversationId": 1,
+      "timestamp": 1659719885,
+      "body": "super !",
+      "authorId": 1,
+      "id": 7
+    },
+    {
+      "conversationId": 2,
+      "timestamp": 1659719895,
+      "body": "test",
+      "authorId": 1,
+      "id": 8
     }
   ],
   "users": [

@@ -1,12 +1,35 @@
 import type { AppProps } from 'next/app'
 import { getLoggedUserId } from '../utils/getLoggedUserId'
+import Header from '../components/base/Header'
+import Footer from '../components/base/Footer'
+import 'normalize.css'
 import '../styles/globals.css'
+import { createTheme, ThemeProvider } from '@mui/material'
 
 // Default way to get a logged user
 export const loggedUserId = getLoggedUserId()
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+// Material theme
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#FF6E14'
+    }
+  }
+})
+
+
+const MyApp = ({ Component, pageProps }: AppProps) => {
+  return (
+    <ThemeProvider theme={theme}>
+      <Header />
+      <main className="main">
+        <Component {...pageProps} />
+      </main>
+      <Footer />
+    </ThemeProvider>
+  )
 }
+
 
 export default MyApp
