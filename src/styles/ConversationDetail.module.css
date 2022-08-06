@@ -1,11 +1,15 @@
 .topBar {
-  padding: 2rem;
   margin: 1rem 2rem 2rem;
+  padding: 1rem 0;
   border-top: 1px solid black;
   background-color: lightgray;
-  width: 80%;
+  width: 90%;
   font-size: 1.1rem;
   font-weight: bold;
+}
+
+.topBar > div {
+  padding: 0 1rem;
 }
 
 .topBar .authors {
@@ -14,6 +18,7 @@
 
 .topBar .lastMessageDate {
   float: right;
+
 }
 
 .topBar .date {
@@ -24,7 +29,6 @@
   .topBar .lastMessageDate {
     display: none;
   }
-  
 }
 
 div.messageList {
@@ -52,7 +56,7 @@ div.messageFromRecipient > p.messageAuthor {
   padding-left: 20px; 
 }
 
-.messageContent {
+p.messageContent {
   position: relative;
   padding: 15px 20px;
   border-radius: 25px;
@@ -74,7 +78,6 @@ div.messageFromRecipient > p.messageContent {
 }
 
 div.reply {
-  width: 100%;
+  width: 90%;
   margin-top: 2rem;
 }
-

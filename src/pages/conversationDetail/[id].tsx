@@ -1,6 +1,6 @@
 import { FC, useState  } from 'react'
 import { Message as MessageInterface} from '../../types/message'
-import { MOMENT_DATE_FORMAT_CONVERSATION, URL_MESSAGES } from '../../utils/constants'
+import { MOMENT_DATE_FORMAT_CONVERSATION, PATH_CONVERSATION_LIST, URL_MESSAGES } from '../../utils/constants'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styles from '../../styles/ConversationDetail.module.css'
@@ -15,18 +15,19 @@ type Props = React.PropsWithChildren<{
 
 
 const ConversationDetail: FC = ({ messages }: Props) => {
+  const [stateMessages, setStateMessages] = useState(messages)
+
   const router = useRouter()
   const interlocutor = router.query?.interlocutor.toString() || ''
   const id = parseInt(router.query?.id.toString() || '0')
-  const lastMessageDate = moment.unix(messages[messages.length-1].timestamp).format(MOMENT_DATE_FORMAT_CONVERSATION)
-
-  const [stateMessages, setStateMessages] = useState(messages)
+  const existingMessages = !!stateMessages?.length
+  const lastMessageTimestamp = existingMessages ? moment.unix(stateMessages[stateMessages.length-1].timestamp).format(MOMENT_DATE_FORMAT_CONVERSATION) : ''
 
   return (
     <>
       <div className={styles.topBar}>
         <div className={styles.authors}>{interlocutor} - You</div>
-        <div className={styles.lastMessageDate}>Last message <span className={styles.date}>{lastMessageDate}</span></div>
+        <div className={styles.lastMessageDate}>Last message <span className={styles.date}>{lastMessageTimestamp}</span></div>
       </div>
 
       <div className={styles.messageList}>
@@ -40,14 +41,18 @@ const ConversationDetail: FC = ({ messages }: Props) => {
       </div>
 
       <div className={styles.reply}>
-        <AddMessage conversationId={id} updateMessages={(message: MessageInterface) => setStateMessages([...stateMessages, message])} />   
+        <AddMessage
+          conversationId={id}
+          updateMessages={(message: MessageInterface) => setStateMessages([...stateMessages, message])}
+          label={existingMessages ? 'reply' : 'write first message'}
+        />   
       </div>
 
       <div className="actions">
         <Link href='/'>
           <a className="btn"><Button variant="outlined">Home</Button></a>
         </Link>&nbsp;
-        <Link href='/conversationList'>
+        <Link href={PATH_CONVERSATION_LIST}>
           <a className="btn"><Button variant="outlined">Conversations</Button></a>
         </Link>
       </div>

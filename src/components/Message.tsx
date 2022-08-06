@@ -3,7 +3,7 @@ import React, { ReactElement } from "react"
 import styles from '../styles/ConversationDetail.module.css'
 import { Message as MessageInterface } from "../types/message"
 import { MOMENT_DATE_FORMAT } from "../utils/constants"
-import { getLoggedUserId } from "../utils/getLoggedUserId"
+import { getLoggedUser } from "../utils/getLoggedUser"
 
 type Props = React.PropsWithChildren<{
   message: MessageInterface
@@ -12,7 +12,7 @@ type Props = React.PropsWithChildren<{
 
 
 const Message = ({ message, interlocutor }: Props): ReactElement => {
-  const messageFromLoggedUser = message.authorId === getLoggedUserId()
+  const messageFromLoggedUser = message.authorId === getLoggedUser().id
   const author = !!interlocutor.length && !messageFromLoggedUser ? interlocutor : 'You'
   const messageDate = moment.unix(message.timestamp).format(MOMENT_DATE_FORMAT)
   

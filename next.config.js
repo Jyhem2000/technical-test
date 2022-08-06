@@ -5,5 +5,6 @@ module.exports = {
   },
   eslint: {
     ignoreDuringBuilds: true,
-  }
+  },
+  generateEtags: false,
 }

@@ -5,7 +5,10 @@ export const URL_CONVERSATIONS = BASE_URL + '/conversations/'
 export const URL_MESSAGE = BASE_URL + '/message/'
 export const URL_MESSAGES = BASE_URL + '/messages/'
 export const URL_USER = BASE_URL + '/user/'
+export const URL_USERS = BASE_URL + '/users/'
 
+export const PATH_CONVERSATION_ADD = '/addConversation'
+export const PATH_CONVERSATION_LIST = '/conversationList'
 export const PATH_CONVERSATION_DETAIL = '/conversationDetail/'
 
 export const MOMENT_DATE_FORMAT = 'LL'

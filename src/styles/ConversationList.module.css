@@ -24,3 +24,12 @@
   margin-left: 2rem;
   width: 10rem;
 }
+
+hr.divider {
+  margin: 2rem 0;
+}
+
+div.actions {
+  margin-top: 2rem;
+  text-align: center;
+}

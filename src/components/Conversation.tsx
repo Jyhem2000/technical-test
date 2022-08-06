@@ -13,7 +13,7 @@ type Props = React.PropsWithChildren<{
 
 
 const Conversation = ({ interlocutor, conversation }: Props): ReactElement => {
-  const lastMessageDate = moment.unix(conversation.lastMessageTimestamp).format(MOMENT_DATE_FORMAT)
+  const lastMessageDate = conversation.lastMessageTimestamp ? moment.unix(conversation.lastMessageTimestamp).format(MOMENT_DATE_FORMAT) : 'no message yet'
 
   return (
     <>

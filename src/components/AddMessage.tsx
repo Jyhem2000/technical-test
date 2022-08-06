@@ -1,19 +1,19 @@
 import { ReactElement, useState  } from 'react'
 import { IconButton, TextField } from "@mui/material"
 import { RequestMethods, URL_MESSAGES } from "../utils/constants"
-import { getLoggedUserId } from '../utils/getLoggedUserId'
+import { getLoggedUser } from '../utils/getLoggedUser'
 import { Message as MessageInterface} from '../types/message'
 import { Send } from '@mui/icons-material'
 import { buildFetchOptions, getTimestamp } from '../utils/utils'
-import moment from 'moment'
 
 type Props = React.PropsWithChildren<{
   conversationId: number
   updateMessages: (message: MessageInterface) => void
+  label: string
 }>
 
 
-const AddMessage = ({ conversationId, updateMessages }: Props): ReactElement => {
+const AddMessage = ({ conversationId, updateMessages, label }: Props): ReactElement => {
   const [message, setMessage] = useState('')
 
   /**
@@ -36,7 +36,7 @@ const AddMessage = ({ conversationId, updateMessages }: Props): ReactElement => 
       conversationId,
       timestamp: getTimestamp(),
       body: message,
-      authorId: getLoggedUserId()
+      authorId: getLoggedUser().id
     })
 
     const response = await fetch(URL_MESSAGES + conversationId, buildFetchOptions(RequestMethods.POST, JSONdata))
@@ -50,7 +50,7 @@ const AddMessage = ({ conversationId, updateMessages }: Props): ReactElement => 
     <form onSubmit={handleSubmit}>
       <TextField
         fullWidth
-        label="reply"
+        label={label}
         value={message}
         onChange={(e: any) => setMessage(e.target.value)}
         InputProps={{ endAdornment: <SendButton /> }}

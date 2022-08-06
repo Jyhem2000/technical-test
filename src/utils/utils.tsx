@@ -1,4 +1,6 @@
-import moment from "moment";
+import moment from "moment"
+import { Conversation as ConversationInterface } from '../types/conversation'
+import { User as UserInterface } from '../types/user'
 
 /**
  * isEmpty method

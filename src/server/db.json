@@ -74,13 +74,6 @@
       "body": "super !",
       "authorId": 1,
       "id": 7
-    },
-    {
-      "conversationId": 2,
-      "timestamp": 1659719895,
-      "body": "test",
-      "authorId": 1,
-      "id": 8
     }
   ],
   "users": [
@@ -102,6 +95,11 @@
     {
       "id": 4,
       "nickname": "Elodie",
+      "token": "xxxx"
+    },
+    {
+      "id": 5,
+      "nickname": "Mathieu",
       "token": "xxxx"
     }
   ]
